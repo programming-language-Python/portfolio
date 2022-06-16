@@ -1,0 +1,41 @@
+.header {
+  grid-area: header;
+  padding: 15px;
+  background-color: #794f45;
+  align-items: center;
+  display: grid;
+  grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+
+  &__logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
+    grid-column: 2 / 3;
+  }
+
+  &__menu {
+    grid-column: 3 / 4;
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: end;
+
+    & li {
+      margin: 0 0 0 20px;
+    }
+  }
+
+
+  &__link {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+
+}
+

@@ -1,0 +1,27 @@
+{% load pwa %}
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Портфолио Романова Романа Максимовича{% endblock %}</title>
+    {% pwa_meta_data %}
+</head>
+
+<body>
+<div class="wrapper">
+    {% include 'inc/_header.html' %}
+    <main class="main">
+        <section class="content">
+            {% block content %}КОНТЕНТ{% endblock %}
+        </section>
+    </main>
+    {% include 'inc/_footer.html' %}
+</div>
+{% pwa_meta_script %}
+</body>
+
+</html>

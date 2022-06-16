@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Романов Роман Максимович</h1>
+    <section class="content__project project">
+        <h2 class="project__title">Проекты</h2>
+        <div class="project__items">
+            {% for project in project_list %}
+                <div class="project__item project__item_big">
+                    <img src="{{ project.photo.url }}" alt="{{ project.title }}">
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
