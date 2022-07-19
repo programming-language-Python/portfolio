@@ -13,8 +13,8 @@ class Project(models.Model):
 
     photo = models.ImageField(
         upload_to='preview/', verbose_name='Превью', blank=True)
-    programming_language = models.ForeignKey('ProgrammingLanguage', on_delete=models.PROTECT,
-                                             verbose_name='Язык программирования')
+    language = models.ForeignKey('Language', on_delete=models.PROTECT, null=True,
+                                 verbose_name='Язык')
     link = models.URLField(verbose_name="Ссылка")
     github = models.URLField(verbose_name="GitHub")
     description = models.TextField(verbose_name="Описание")
@@ -29,17 +29,17 @@ class Project(models.Model):
         ordering = ['title']
 
 
-class ProgrammingLanguage(models.Model):
+class Language(models.Model):
     title = models.CharField(
-        max_length=100, db_index=True, verbose_name='Язык программирования')
+        max_length=100, db_index=True, verbose_name='Язык')
 
     def get_absolute_url(self):
-        return reverse('programming_language', kwargs={"programming_language_id": self.pk})
+        return reverse('language', kwargs={"language_id": self.pk})
 
     def __str__(self):
         return self.title
 
     class Meta:
-        verbose_name = 'Язык программирования'
-        verbose_name_plural = 'Языки программирования'
+        verbose_name = 'Язык'
+        verbose_name_plural = 'Языки'
         ordering = ['title']
