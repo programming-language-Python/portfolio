@@ -1,11 +1,28 @@
-<header class="header">
-    <a href="" class="header__logo"></a>
-    <nav class="header__menu">
-        <ul class="header__list">
-            <li><a href="" class="header__link">Пункт меню</a></li>
-            <li><a href="" class="header__link">Пункт меню</a></li>
-            <li><a href="" class="header__link">Пункт меню</a></li>
-            <li><a href="" class="header__link">Пункт меню</a></li>
-        </ul>
-    </nav>
-</header>
+{% load static %}
+{#{% load project_tags %}#}
+{#<header class="header">#}
+{#    <a href="" class="header__logo">#}
+{#        <img src="{% static 'images/icon.png' %}" alt="">#}
+{#    </a>#}
+{#    <p>Романов Роман Максимович</p>#}
+{#    <sidenav class="header__menu">#}
+{#        <ul class="header__list">#}
+{#            <li>#}
+{#                <a href="{% url 'home' %}"#}
+{#                   class="header__link">Все проекты</a>#}
+{#            </li>#}
+{#            {% get_programming_languages as programming_languages %}#}
+{#            {% for programming_language in programming_languages %}#}
+{#                <li>#}
+{#                    <a href="{% url 'programming_language' programming_language.pk %}"#}
+{#                       class="header__link">{{ programming_language }}</a>#}
+{#                </li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#    </sidenav>#}
+{#</header>#}
+{#<header class="header">#}
+{#    <div class="header__logo">#}
+{#        <img src="{% static 'images/icon.png' %}" alt="">#}
+{#    </div>#}
+{#</header>#}

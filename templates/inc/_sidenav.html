@@ -1,0 +1,44 @@
+{% load static %}
+{% load project_tags %}
+<input type="checkbox" id="nav-toggle" hidden="">
+<nav class="nav">
+    <label for="nav-toggle" class="nav-toggle" onclick=""></label>
+    <h2>Сортировка</h2>
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Все проекты</a>
+        </li>
+        {% get_languages as languages %}
+        {% for language in languages %}
+            <li>
+                <a href="{% url 'language' language.pk %}">{{ language }}</a>
+            </li>
+        {% endfor %}
+        <ul class="nav__relations">
+            <li>
+                <a href="https://t.me/RomanR007" target="_blank">
+                    <img src="{% static 'svg/sidenav/sidenav__telegram.svg' %}" alt="Telegram">
+                </a>
+            </li>
+            <li>
+                <a href="https://vk.com/romanromanov2001" target="_blank">
+                    <img src="{% static 'svg/sidenav/sidenav__vk.svg' %}" alt="Vk">
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.clck.bar/79258065338" target="_blank">
+                    <img src="{% static 'svg/sidenav/sidenav__whatsapp.svg' %}" alt="WhatsApp">
+                </a>
+            </li>
+            <li>
+                <a href="mailto:maks3564195@gmail.com" target="_blank">
+                    <img src="{% static 'svg/sidenav/sidenav__gmail.svg' %}" alt="Gmail">
+                </a>
+            </li>
+        </ul>
+    </ul>
+</nav>
+<a href="/" class="logo">
+    <img src="{% static 'images/icon.png' %}" alt="">
+</a>
+<div class="mask-content"></div>

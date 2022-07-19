@@ -1,8 +1,46 @@
 .footer {
-  padding: 15px;
-  background-color: #77608d;
+  //padding: 15px;
+  background-color: $color1;
   grid-area: footer;
-  align-items: center;
-  display: grid;
-  grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+
+  &__sub a {
+    color: $color3;
+
+    &:hover {
+      color: $color2;
+    }
+  }
+
+  //display: grid;
+  //grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+
+  //@media (min-width: 550px) {
+  //
+  //  &__copy {
+  //    grid-column: 2 / 3;
+  //  }
+  //
+  //  &__text {
+  //    grid-column: 3 / 4;
+  //    text-align: right;
+  //  }
+  //}
+  //
+  //@media (max-width: 550px) {
+  //
+  //  grid-template: 1fr 1fr / 1fr;
+  //  justify-items: center;
+  //
+  //  &__copy {
+  //    order: 2;
+  //  }
+  //
+  //  &__text {
+  //    order: 1;
+  //  }
+  //}
 }

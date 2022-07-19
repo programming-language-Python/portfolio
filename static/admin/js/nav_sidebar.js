@@ -2,20 +2,24 @@
 {
     const toggleNavSidebar = document.getElementById('toggle-nav-sidebar');
     if (toggleNavSidebar !== null) {
-        const navLinks = document.querySelectorAll('#nav-sidebar a');
+        const navLinks = document.querySelectorAll('#sidenav-sidebar a');
+
         function disableNavLinkTabbing() {
             for (const navLink of navLinks) {
                 navLink.tabIndex = -1;
             }
         }
+
         function enableNavLinkTabbing() {
             for (const navLink of navLinks) {
                 navLink.tabIndex = 0;
             }
         }
+
         function disableNavFilterTabbing() {
             document.getElementById('nav-filter').tabIndex = -1;
         }
+
         function enableNavFilterTabbing() {
             document.getElementById('nav-filter').tabIndex = 0;
         }
@@ -31,7 +35,7 @@
         }
         main.classList.toggle('shifted', navSidebarIsOpen === 'true');
 
-        toggleNavSidebar.addEventListener('click', function() {
+        toggleNavSidebar.addEventListener('click', function () {
             if (navSidebarIsOpen === 'true') {
                 navSidebarIsOpen = 'false';
                 disableNavLinkTabbing();
@@ -97,6 +101,7 @@
             checkValue({target: nav, key: ''});
         }
     }
+
     window.initSidebarQuickFilter = initSidebarQuickFilter;
     initSidebarQuickFilter();
 }

@@ -1,0 +1,27 @@
+.wrapper {
+  display: grid;
+  min-height: 100vh;
+  grid-template: minmax(prc(100, $windowSize), auto) 1fr minmax(prc(70, $windowSize), auto) / 1fr;
+  grid-template-areas:
+		"header"
+		"main"
+		"footer";
+}
+
+.main {
+  padding: 50px prc(50, $windowSize);
+  margin-bottom: prc(100, $windowSize);
+}
+
+.content {
+  &__project {
+    margin: 0 0 prc(40, $windowSize) 0;
+  }
+}
+
+.title {
+  margin: prc(20, $windowSize) 0;
+  text-shadow: rgba(255, 255, 255, .1) -1px -1px 1px, rgba(0, 0, 0, .5) 1px 1px 1px;
+  font-size: 2rem;
+  line-height: 2rem;
+}

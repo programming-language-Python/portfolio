@@ -3,7 +3,7 @@ from django import forms
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Project, ProgrammingLanguage
+from .models import Project, Language
 
 
 # Register your models here.
@@ -18,12 +18,12 @@ class ProjectAdminForm(forms.ModelForm):
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectAdminForm
     list_display = (
-        'id', 'get_photo', 'title', 'programming_language', 'link', 'github', 'some_field_html', 'date_added')
+        'id', 'get_photo', 'title', 'language', 'link', 'github', 'some_field_html', 'date_added')
     list_display_links = ('id', 'title')
-    search_fields = ('title', 'programming_language', 'some_field_html', 'date_added')
-    list_editable = ('programming_language',)
-    list_filter = ('id', 'title', 'programming_language', 'description', 'date_added')
-    fields = ('photo', 'title', 'programming_language', 'link', 'github', 'description', 'date_added')
+    search_fields = ('title', 'language', 'some_field_html', 'date_added')
+    list_editable = ('language',)
+    list_filter = ('id', 'title', 'language', 'description', 'date_added')
+    fields = ('photo', 'title', 'language', 'link', 'github', 'description', 'date_added')
     readonly_fields = ('date_added',)
     save_on_top = True
 
@@ -36,14 +36,14 @@ class ProjectAdmin(admin.ModelAdmin):
     get_photo.short_description = 'Превью'
 
 
-class ProgrammingLanguageAdmin(admin.ModelAdmin):
+class LanguageAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
 
 
 admin.site.register(Project, ProjectAdmin)
-admin.site.register(ProgrammingLanguage, ProgrammingLanguageAdmin)
+admin.site.register(Language, LanguageAdmin)
 
 admin.site.site_title = 'Управление проектами'
 admin.site.site_header = 'Управление проектами'

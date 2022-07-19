@@ -1,41 +1,238 @@
-.header {
-  grid-area: header;
-  padding: 15px;
-  background-color: #794f45;
-  align-items: center;
-  display: grid;
-  grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+//.header {
+//  grid-area: header;
+//  padding: 15px;
+//  background-color: #794f45;
+//  align-items: center;
+//  display: grid;
+//  grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+//
+//  &__logo {
+//    width: 70px;
+//    height: 70px;
+//    border-radius: 50%;
+//    grid-column: 2 / 3;
+//
+//    & img {
+//      max-width: 100%;
+//      display: block;
+//    }
+//  }
+//
+//  &__menu {
+//    grid-column: 3 / 4;
+//  }
+//
+//  &__list {
+//    display: grid;
+//    grid-auto-flow: column;
+//    justify-items: end;
+//
+//    & li {
+//      margin: 0 0 0 20px;
+//    }
+//  }
+//
+//
+//  &__link {
+//    color: #fff;
+//    text-transform: uppercase;
+//    font-size: 14px;
+//    text-decoration: none;
+//  }
+//
+//
+//}
+//
 
-  &__logo {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #fff;
-    grid-column: 2 / 3;
-  }
+//
+//.header {
+//  position: fixed;
+//  width: 100%;
+//  top: 0;
+//  left: 0;
+//  z-index: 50;
+//
+//  &:before {
+//    content: '';
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    width: 100%;
+//    height: 100%;
+//    background-color: #5e5373;
+//    z-index: 2;
+//  }
+//
+//  &__body {
+//    position: relative;
+//    display: flex;
+//    justify-content: space-between;
+//    height: 80px;
+//    align-items: center;
+//  }
+//
+//  &__logo {
+//    flex: 0 0 60px;
+//    border-radius: 50%;
+//    overflow: hidden;
+//    position: relative;
+//    z-index: 3;
+//
+//    & img {
+//      max-width: 100%;
+//      /* в данном случае убирает срезание снизу лого. В видео был срез */
+//      display: block;
+//    }
+//  }
+//
+//  &__burger {
+//    display: none;
+//  }
+//
+//  &__list {
+//    display: flex;
+//    position: relative;
+//    z-index: 2;
+//
+//    & li {
+//      list-style: none;
+//      margin: 0px 0px 0px 20px;
+//    }
+//  }
+//
+//  &__link {
+//    color: #fff;
+//    text-transform: uppercase;
+//    font-size: 18px;
+//    text-decoration: none;
+//  }
+//
+//  @media (max-width: 767px) {
+//    &__body {
+//      height: 50px;
+//    }
+//
+//    &__logo {
+//      flex: 0 0 40px;
+//    }
+//
+//    &__burger {
+//      display: block;
+//      position: relative;
+//      width: 30px;
+//      height: 20px;
+//      z-index: 3;
+//
+//      &.active:before {
+//        transform: rotate(45deg);
+//        top: 9px;
+//      }
+//
+//      &.active:after {
+//        transform: rotate(-45deg);
+//        bottom: 9px;
+//      }
+//
+//      &.active span {
+//        transform: scale(0);
+//      }
+//    }
+//
+//    &__burger span {
+//      position: absolute;
+//      background-color: #fff;
+//      left: 0;
+//      width: 100%;
+//      height: 2px;
+//      top: 9px;
+//      transition: all 0.3s ease 0s;
+//    }
+//
+//    &__burger:before,
+//    &__burger:after {
+//      content: '';
+//      background-color: #fff;
+//      position: absolute;
+//      width: 100%;
+//      height: 2px;
+//      left: 0;
+//      transition: all 0.3s ease 0s;
+//    }
+//
+//    &__burger:before {
+//      top: 0;
+//    }
+//
+//    &__burger:after {
+//      bottom: 0;
+//    }
+//
+//    &__menu {
+//      position: fixed;
+//      top: -100%;
+//      left: 0;
+//      width: 100%;
+//      height: 100%;
+//      overflow: auto;
+//      /* добавляет скролл, когда не влазиет содержимое */
+//      transition: all 0.3s ease 0s;
+//      background-color: #18b5a4;
+//      padding: 70px 10px 20px 10px;
+//
+//      &.active {
+//        top: 0;
+//      }
+//    }
+//
+//    &__list {
+//      display: block;
+//
+//      & li {
+//        margin: 0px 0px 20px 0px;
+//      }
+//    }
+//
+//    &__link {
+//      font-size: 24px;
+//    }
+//  }
+//}
 
-  &__menu {
-    grid-column: 3 / 4;
-  }
 
-  &__list {
-    display: grid;
-    grid-auto-flow: column;
-    justify-items: end;
-
-    & li {
-      margin: 0 0 0 20px;
-    }
-  }
-
-
-  &__link {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 14px;
-    text-decoration: none;
-  }
-
-
-}
-
+//.header {
+//  /*  ширна произвольная, не стесняйтесь экспериментировать */
+//  width: 320px;
+//  min-width: 320px;
+//  /* фиксируем и выставляем высоту панели на максимум */
+//  height: 100%;
+//  position: fixed;
+//  top: 0;
+//  bottom: 0;
+//  margin: 0;
+//  /* сдвигаем (прячем) панель относительно левого края страницы */
+//  right: 0;
+//  /* внутренние отступы */
+//  padding: 15px 20px;
+//  /* плавный переход смещения панели */
+//  -webkit-transition: left 0.3s;
+//  -moz-transition: left 0.3s;
+//  transition: left 0.3s;
+//  /* определяем цвет фона панели */
+//  background: $color1;
+//  /* поверх других элементов */
+//  z-index: 2000;
+//
+//  &__logo {
+//    flex: 0 0 60px;
+//    border-radius: 50%;
+//    overflow: hidden;
+//    position: relative;
+//    z-index: 3;
+//
+//    & img {
+//      max-width: 100%;
+//      /* в данном случае убирает срезание снизу лого. В видео был срез */
+//      display: block;
+//    }
+//  }
+//}

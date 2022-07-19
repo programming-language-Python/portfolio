@@ -21,7 +21,6 @@ from portfolio import settings
 
 urlpatterns = [
     path('', include('project.urls')),
-    path('', include('pwa.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
 ]
